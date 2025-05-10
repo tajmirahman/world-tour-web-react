@@ -1,0 +1,23 @@
+[
+    {
+      "id": "cat001",
+      "category": "Hotel",
+      "slug": "hotel"
+    },
+    {
+      "id": "cat002",
+      "category": "Tour",
+      "slug": "tour"
+    },
+    {
+      "id": "cat003",
+      "category": "Space",
+      "slug": "space"
+    },
+    {
+      "id": "cat004",
+      "category": "Event",
+      "slug": "event"
+    }
+  ]
+  

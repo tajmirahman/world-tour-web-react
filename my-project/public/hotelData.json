@@ -1,0 +1,103 @@
+[
+    {
+      "id": 1,
+      "title": "Grand Horizon Hotel",
+      "image": "https://images.unsplash.com/photo-1566073771259-6a8506099945",
+      "cost": 120,
+      "category": "Hotel",
+      "rating": 4.3,
+      "location": "New York, USA",
+      "description": "A modern hotel in the heart of New York City, perfect for business and leisure travelers."
+    },
+    {
+      "id": 2,
+      "title": "Oceanview Paradise Resort",
+      "image": "https://i.ibb.co.com/Vc498PtR/17.webp",
+      "cost": 200,
+      "category": "Hotel",
+      "rating": 4.7,
+      "location": "Malibu, USA",
+      "description": "A luxury beachfront resort offering stunning ocean views and premium amenities."
+    },
+    {
+      "id": 3,
+      "title": "Mountain Escape Lodge",
+      "image": "https://images.unsplash.com/photo-1505693416388-ac5ce068fe85",
+      "cost": 90,
+      "category": "Hotel",
+      "rating": 4.0,
+      "location": "Aspen, USA",
+      "description": "A cozy lodge nestled in the mountains, ideal for winter sports enthusiasts and hikers."
+    },
+    {
+      "id": 4,
+      "title": "City Central Inn",
+      "image": "https://images.unsplash.com/photo-1560347876-aeef00ee58a1",
+      "cost": 75,
+      "category": "Hotel",
+      "rating": 3.8,
+      "location": "Chicago, USA",
+      "description": "Affordable and convenient, located in the downtown area close to major attractions."
+    },
+    {
+      "id": 5,
+      "title": "Lakeside Serenity Hotel",
+      "image": "https://images.unsplash.com/photo-1505691938895-1758d7feb511",
+      "cost": 110,
+      "category": "Hotel",
+      "rating": 4.2,
+      "location": "Lake Tahoe, USA",
+      "description": "A peaceful retreat by the lake with breathtaking views and comfortable accommodations."
+    },
+    {
+      "id": 6,
+      "title": "Desert Bloom Resort",
+      "image": "https://i.ibb.co.com/5hTHc3c3/515982850.jpg",
+      "cost": 130,
+      "category": "Hotel",
+      "rating": 4.5,
+      "location": "Phoenix, USA",
+      "description": "An oasis in the desert with spa services and beautifully landscaped grounds."
+    },
+    {
+      "id": 7,
+      "title": "Urban Nest Hotel",
+      "image": "https://i.ibb.co.com/ycpnRmHY/511665197.jpg",
+      "cost": 95,
+      "category": "Tour",
+      "rating": 4.1,
+      "location": "Seattle, USA",
+      "description": "A trendy boutique hotel in the city center with stylish rooms and friendly service."
+    },
+    {
+      "id": 8,
+      "title": "Coastal Breeze Inn",
+      "image": "https://i.ibb.co.com/chN7XMn6/373581cd.webp",
+      "cost": 85,
+      "category": "Tour",
+      "rating": 3.9,
+      "location": "San Diego, USA",
+      "description": "Charming seaside inn just steps from the beach, offering relaxing stays."
+    },
+    {
+      "id": 9,
+      "title": "Royal Garden Suites",
+      "image": "https://images.unsplash.com/photo-1566073771259-6a8506099945",
+      "cost": 150,
+      "category": "Space",
+      "rating": 4.6,
+      "location": "Miami, USA",
+      "description": "Elegant and luxurious hotel with a garden view and top-class services."
+    },
+    {
+      "id": 10,
+      "title": "Aurora Sky Hotel",
+      "image": "https://images.unsplash.com/photo-1505691938895-1758d7feb511",
+      "cost": 170,
+      "category": "Space",
+      "rating": 4.8,
+      "location": "Anchorage, USA",
+      "description": "Experience the Northern Lights in comfort at this beautifully located hotel."
+    }
+  ]
+  
