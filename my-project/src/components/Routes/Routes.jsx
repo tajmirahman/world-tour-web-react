@@ -4,6 +4,7 @@ import Error from "../Error";
 import Home from "../Home";
 import HotelCard from "../HotelCard";
 import Category from "../pages/category";
+import CartDetails from "../pages/CartDetails";
 
 
 const routes = createBrowserRouter([
@@ -35,7 +36,12 @@ const routes = createBrowserRouter([
     {
         path: '/categories',
         element: <Category></Category>
+    },
+    {
+        path: '/cart/details',
+        element: <CartDetails></CartDetails>
     }
+
 ]);
 
 export default routes;

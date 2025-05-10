@@ -1,5 +1,5 @@
 import React from 'react';
-import { NavLink } from 'react-router-dom';
+import { Link, NavLink } from 'react-router-dom';
 import logoImage from '../../../assets/logoTravel.avif'
 
 const Header = () => {
@@ -27,7 +27,7 @@ const Header = () => {
                     <NavLink to={'/news'}><li><a>News</a></li></NavLink>
                     </ul>
                 </div>
-                <img className='w-10 h-10 hidden lg:block' src={logoImage} alt="" />
+                <Link to={'/'}><img className='w-10 h-10 hidden lg:block' src={logoImage} alt="" /></Link>
             </div>
             <div className="navbar-center hidden lg:flex">
                 <ul className="menu menu-horizontal px-1">

@@ -1,10 +1,11 @@
 import { FaMapMarkerAlt } from "react-icons/fa";
+import { Link, NavLink } from "react-router-dom";
 
 const Card = ({ hotel }) => {
 
-    console.log(hotel)
+    // console.log(hotel)
 
-     const {cost,title,location,image,rating}=hotel || {};
+     const {id,cost,title,location,image,rating}=hotel || {};
 
     return (
         <div className=" rounded-2xl shadow-md overflow-hidden border border-base-200">
@@ -19,14 +20,14 @@ const Card = ({ hotel }) => {
                 </span>
                 <div className="absolute bottom-2 left-2 text-white flex items-center gap-1">
                     <FaMapMarkerAlt className="text-white" />
-                    <span className="text-sm">{title}</span>
+                 <span className="text-sm">{title}</span>
                 </div>
             </div>
 
             <div className="p-4">
-                <h2 className="text-lg font-semibold text-gray-800">
+                <NavLink to={`/cart/details/${id}`}><h2 className="text-lg font-semibold text-gray-800">
                     {location}
-                </h2>
+                </h2></NavLink>
                 <p className="text-sm text-gray-600">
                     <span className="text-purple-600 font-medium">{rating}</span>{" "}
                      <span className="text-gray-400">(1214 reviews)</span>
