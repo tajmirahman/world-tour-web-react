@@ -7,7 +7,7 @@ const Card = ({ hotel }) => {
      const {cost,title,location,image,rating}=hotel || {};
 
     return (
-        <div className="max-w-sm rounded-2xl shadow-md overflow-hidden border border-base-200">
+        <div className=" rounded-2xl shadow-md overflow-hidden border border-base-200">
             <div className="relative">
                 <img
                     src={image}
@@ -29,7 +29,8 @@ const Card = ({ hotel }) => {
                 </h2>
                 <p className="text-sm text-gray-600">
                     <span className="text-purple-600 font-medium">{rating}</span>{" "}
-                    <span className="text-gray-400">(1214 reviews)</span>
+                     <span className="text-gray-400">(1214 reviews)</span>
+                    
                 </p>
                 <p className="text-xl font-bold text-purple-700 mt-2">
                     $99.00 <span className="text-sm font-normal text-gray-600">{cost}</span>

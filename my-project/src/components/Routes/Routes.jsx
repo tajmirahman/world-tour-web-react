@@ -3,6 +3,7 @@ import MainLayout from "../Mainlayout/MainLayout";
 import Error from "../Error";
 import Home from "../Home";
 import HotelCard from "../HotelCard";
+import Category from "../pages/category";
 
 
 const routes = createBrowserRouter([
@@ -17,14 +18,23 @@ const routes = createBrowserRouter([
                 loader: async () => fetch('../categoryData.json'),
                 children: [
                     {
+                        path: '/',
+                        element: <HotelCard></HotelCard>,
+                        loader: () => fetch('../tourData.json')
+                    },
+                    {
                         path: '/category/:category',
                         element: <HotelCard></HotelCard>,
-                        loader: ()=> fetch('../tourData.json')
+                        loader: () => fetch('../tourData.json')
                     }
                 ]
             }
         ]
 
+    },
+    {
+        path: '/categories',
+        element: <Category></Category>
     }
 ]);
 

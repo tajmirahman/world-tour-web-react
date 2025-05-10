@@ -7,8 +7,8 @@ const HotelCard = () => {
     const {category}=useParams();
     console.log(category)
     return (
-        <div className='grid grid-cols-1 md:grid-cols-3 lg:grid-cols-4 gap-3'>
-            hotel card --{category}
+        <div className='grid grid-cols-1 md:grid-cols-3 lg:grid-cols-4 gap-3 w-11/12 mx-auto'>
+            
             {
                 data.map(hotel=> <Card hotel={hotel}></Card>)
             }
