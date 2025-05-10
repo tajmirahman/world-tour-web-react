@@ -10,7 +10,7 @@ const MainLayout = () => {
         <div>
             {/* Header section */}
             <div
-                className="bg-cover bg-center  md:h-[600px] md:px-6"
+                className="bg-cover bg-center h-[400px]  md:h-[600px] md:px-6"
                 style={{
                     backgroundImage: `url(${bannerImage})`,
 
