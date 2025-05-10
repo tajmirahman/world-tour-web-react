@@ -1,19 +1,21 @@
 import React from 'react';
-import { Outlet, useLoaderData } from 'react-router-dom';
 import Categories from './Categories';
+import { Outlet } from 'react-router-dom';
 
 const Home = () => {
     // const data= useLoaderData();
     // console.log(data)
     return (
-        <div className='py-6'>
-            <div>
+        <div className='md:w-11/12 mx-auto py-6'>
                 
-                <div>
-                    <Categories></Categories>
-                </div>
-            </div>
+
+            {/* categories section */}
+            
+            <Categories></Categories>
+
+            {/* outlet section */}
             <Outlet></Outlet>
+
         </div>
     );
 };

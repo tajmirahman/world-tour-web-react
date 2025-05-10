@@ -2,23 +2,24 @@ import { createBrowserRouter } from "react-router-dom";
 import MainLayout from "../Mainlayout/MainLayout";
 import Error from "../Error";
 import Home from "../Home";
-import Categories from "../Categories";
+import HotelCard from "../HotelCard";
 
-const routes=createBrowserRouter([
+
+const routes = createBrowserRouter([
     {
-        path:'/',
-        element:<MainLayout />,
-        errorElement:<Error></Error>,
-        children:[
+        path: '/',
+        element: <MainLayout />,
+        errorElement: <Error></Error>,
+        children: [
             {
-                path:'/',
-                element:<Home></Home>,
-                loader:async()=>fetch ('../categoryData.json'),
-                children:[
+                path: '/',
+                element: <Home></Home>,
+                loader: async () => fetch('../categoryData.json'),
+                children: [
                     {
-                        path:'/categories',
-                        element:<Categories></Categories>,
-                        
+                        path: '/category/:category',
+                        element: <HotelCard></HotelCard>,
+                        loader: ()=> fetch('../tourData.json')
                     }
                 ]
             }
