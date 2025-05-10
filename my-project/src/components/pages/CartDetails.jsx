@@ -1,10 +1,50 @@
-import React from 'react';
+import React, { useEffect, useState } from 'react';
+import { FaMapMarkerAlt } from 'react-icons/fa';
+import { useLoaderData, useParams } from 'react-router-dom';
+import Header from '../Mainlayout/Header/Header';
 
 const CartDetails = () => {
+    const data = useLoaderData();
+    console.log(data)
+    const { id } = useParams();
+    console.log(id)
+
+    const [cartCategory, setCartCategory] = useState([]);
+
+    useEffect(() => {
+        const findData = [...data].find(d => d.id == id)
+        setCartCategory(findData);
+    }, [data, id])
+
+    const { image, title, location } = cartCategory || {};
+
     return (
         <div>
-            cart details
+            <Header></Header>
+
+
+            <div className=' grid grid-cols-1 md:grid-cols-12  gap-3'>
+                <section className='col-span-8'>
+                    <div>
+                        <h2 className='text-3xl font-bold'>Explore the evergreen forest</h2>
+                        <span className='flex items-center'>
+                            <FaMapMarkerAlt className='mr-2' /> {location}
+                        </span>
+                    </div>
+                    <div className='mt-3'>
+                        <figure className='w-full h-[400px]'>
+                            <img
+                                className='w-full h-[400px] object-cover rounded-lg'
+                                src={image}
+                                alt={title}
+                            />
+                        </figure>
+                    </div>
+                </section>
+                <section className='col-span-4'>sdfsdfsd</section>
+            </div>
         </div>
+
     );
 };
 

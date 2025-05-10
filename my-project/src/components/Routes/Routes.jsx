@@ -11,22 +11,22 @@ const routes = createBrowserRouter([
     {
         path: '/',
         element: <MainLayout />,
-        errorElement: <Error></Error>,
+        // errorElement: <Error></Error>,
         children: [
             {
                 path: '/',
                 element: <Home></Home>,
-                loader: async () => fetch('../categoryData.json'),
+                loader: async () => fetch('/categoryData.json').then(res => res.json()),
                 children: [
                     {
                         path: '/',
                         element: <HotelCard></HotelCard>,
-                        loader: () => fetch('../tourData.json')
+                        loader: () => fetch('/tourData.json').then(res => res.json())
                     },
                     {
                         path: '/category/:category',
                         element: <HotelCard></HotelCard>,
-                        loader: () => fetch('../tourData.json')
+                        loader: () => fetch('/tourData.json').then(res => res.json())
                     }
                 ]
             }
@@ -38,8 +38,9 @@ const routes = createBrowserRouter([
         element: <Category></Category>
     },
     {
-        path: '/cart/details',
-        element: <CartDetails></CartDetails>
+        path: '/cart/details/:id',
+        element: <CartDetails></CartDetails>,
+        loader: () => fetch('/tourData.json').then(res => res.json())
     }
 
 ]);
@@ -47,10 +48,3 @@ const routes = createBrowserRouter([
 export default routes;
 
 
-// async()=>{
-//                             const categories= await fetch ('./categoryData.json');
-//                             const data=await categories.json();
-
-//                             return data;
-
-//                         }
