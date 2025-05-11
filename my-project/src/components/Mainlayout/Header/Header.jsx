@@ -1,6 +1,7 @@
 import React from 'react';
 import { Link, NavLink } from 'react-router-dom';
 import logoImage from '../../../assets/logoTravel.avif'
+import './Header.css'
 
 const Header = () => {
     return (
@@ -13,7 +14,7 @@ const Header = () => {
                     <ul
                         tabIndex={0}
                         className="menu menu-sm dropdown-content bg-base-100 rounded-box z-1 mt-3 w-52 p-2 shadow">
-                        <NavLink to={'/'}><li><a>Home</a></li></NavLink>
+                        <NavLink to={'/'}><li ><a >Home</a></li></NavLink>
                      <NavLink to={'/categories'}><li><a>Categories</a></li></NavLink>
                     <li>
                         <details>
@@ -30,13 +31,13 @@ const Header = () => {
                 <Link to={'/'}><img className='w-10 h-10 hidden lg:block' src={logoImage} alt="" /></Link>
             </div>
             <div className="navbar-center hidden lg:flex">
-                <ul className="menu menu-horizontal px-1">
+                <ul className="menu menu-horizontal px-1 text-white ">
                      <NavLink to={'/'}><li><a>Home</a></li></NavLink>
                      <NavLink to={'/categories'}><li><a>Categories</a></li></NavLink>
                     <li>
                         <details>
                             <summary>Pages</summary>
-                            <ul className="p-2">
+                            <ul className="p-2 text-black">
                                 <NavLink to={'/abouts'}><li><a>About</a></li></NavLink>
                                 <NavLink to={'/information'}><li><a>Booking Information</a></li></NavLink>
                             </ul>

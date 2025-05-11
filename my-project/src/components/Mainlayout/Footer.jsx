@@ -9,11 +9,11 @@ const Footer = () => {
                     <h2 className="text-xl font-semibold mb-4">Need any help?</h2>
                     <div className="border-l-4 border-purple-600 pl-4 mb-6">
                         <p className="text-sm">Call 24/7 for any help</p>
-                        <p className="text-2xl font-bold text-purple-600">+00 123 456 789</p>
+                        <p className="text-2xl font-bold text-purple-600">+88 1314 7612 77</p>
                     </div>
-                    <div className="border-l-4 border-purple-600 pl-4 mb-6">
+                    <div className="border-l-4 border-purple-600 pl-4 mb-6 ">
                         <p className="text-sm">Mail to our support team</p>
-                        <p className="text-lg font-semibold text-purple-600">support@domain.com</p>
+                        <p className=" font-semibold  text-purple-600">tajmilurrahman91@gmail.com</p>
                     </div>
                     <div className="border-l-4 border-purple-600 pl-4">
                         <p className="text-sm mb-2">Follow us on</p>
