@@ -63,7 +63,7 @@ const CartDetails = () => {
                 </section>
 
 
-                <section className='col-span-4 space-y-3'>
+                <section className='col-span-4 space-y-3 '>
 
                     <StandardPackage></StandardPackage>
                     <Delux></Delux>

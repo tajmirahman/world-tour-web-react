@@ -34,8 +34,9 @@ const routes = createBrowserRouter([
 
     },
     {
-        path: '/categories',
-        element: <Category></Category>
+        path: '/tour/details',
+        element: <Category></Category>,
+        loader: () => fetch('/tourData.json').then(res => res.json())
     },
     {
         path: '/cart/details/:id',

@@ -33,7 +33,16 @@ const Header = () => {
             <div className="navbar-center hidden lg:flex">
                 <ul className="menu menu-horizontal px-1 text-white ">
                      <NavLink to={'/'}><li><a>Home</a></li></NavLink>
-                     <NavLink to={'/categories'}><li><a>Categories</a></li></NavLink>
+                     {/* <NavLink to={'/categories'}><li><a>Categories</a></li></NavLink> */}
+                     <li>
+                        <details>
+                            <summary>Categories</summary>
+                            <ul className="p-2 text-black">
+                                <NavLink to={'/abouts'}><li><a>Tour</a></li></NavLink>
+                                <NavLink to={'/tour/details'}><li><a>Tour Details</a></li></NavLink>
+                            </ul>
+                        </details>
+                    </li>
                     <li>
                         <details>
                             <summary>Pages</summary>
