@@ -20,7 +20,7 @@ const OverView = () => {
 
             {/* // section Itinerary start */}
 
-            <div className=" bg-white shadow-md rounded-xl p-6 space-y-2">
+            <div className=" bg-white shadow-md rounded-xl p-6 space-y-2 hidden md:block">
 
                 <div>
                     <span>1.Stet clita kasd gubergren, no sea takimata sanctus est</span>

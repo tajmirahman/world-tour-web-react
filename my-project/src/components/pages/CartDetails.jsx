@@ -5,6 +5,10 @@ import Header from '../Mainlayout/Header/Header';
 import detailsBanner from '../../assets/image/hill.jpg'
 import DetailsNavber from '../DetailsNavber';
 import OverView from './CardDetails/OverView';
+import StandardPackage from './CardDetails/StandaredPackage';
+import Delux from './CardDetails/Delux';
+import SupperDelux from './CardDetails/SupperDelux';
+import WhyChooseUs from './CardDetails/WhyChooseUs';
 
 const CartDetails = () => {
     const data = useLoaderData();
@@ -57,7 +61,16 @@ const CartDetails = () => {
                     <OverView></OverView>
 
                 </section>
-                <section className='col-span-4'>sdfsdfsd</section>
+
+
+                <section className='col-span-4 space-y-3'>
+
+                    <StandardPackage></StandardPackage>
+                    <Delux></Delux>
+                    <SupperDelux></SupperDelux>
+                    <WhyChooseUs></WhyChooseUs>
+
+                </section>
             </div>
         </div>
 
