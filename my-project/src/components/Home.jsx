@@ -1,6 +1,7 @@
 import React from 'react';
 import Categories from './Categories';
 import { Outlet } from 'react-router-dom';
+import SpecialOffer from './SpecialOffer';
 
 const Home = () => {
     // const data= useLoaderData();
@@ -15,6 +16,9 @@ const Home = () => {
 
             {/* outlet section */}
             <Outlet></Outlet>
+
+            {/* Special Offers Card */}
+            <SpecialOffer></SpecialOffer>
 
         </div>
     );
