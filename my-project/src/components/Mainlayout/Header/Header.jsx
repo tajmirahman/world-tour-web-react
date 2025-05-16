@@ -38,7 +38,7 @@ const Header = () => {
                         <details>
                             <summary>Categories</summary>
                             <ul className="p-2 text-black">
-                                <NavLink to={'/abouts'}><li><a>Tour</a></li></NavLink>
+                                <NavLink to={'/tour'}><li><a>Tour</a></li></NavLink>
                                 <NavLink to={'/tour/details'}><li><a>Tour Details</a></li></NavLink>
                             </ul>
                         </details>

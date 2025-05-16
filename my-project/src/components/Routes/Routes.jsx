@@ -5,6 +5,9 @@ import Home from "../Home";
 import HotelCard from "../HotelCard";
 import Category from "../pages/category";
 import CartDetails from "../pages/CartDetails";
+import Abouts from "../pages/Abouts";
+import News from "../pages/News";
+import Booking from "../pages/Booking";
 
 
 const routes = createBrowserRouter([
@@ -39,9 +42,21 @@ const routes = createBrowserRouter([
         loader: () => fetch('/tourData.json').then(res => res.json())
     },
     {
-        path: '/cart/details/:id',
+        path: '/tour/details/:id',
         element: <CartDetails></CartDetails>,
         loader: () => fetch('/tourData.json').then(res => res.json())
+    },
+    {
+        path:'/abouts',
+        element:<Abouts></Abouts>
+    },
+    {
+        path:'/news',
+        element:<News></News>
+    },
+    {
+        path:'/information',
+        element:<Booking></Booking>
     }
 
 ]);

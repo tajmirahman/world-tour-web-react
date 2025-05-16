@@ -25,7 +25,7 @@ const Card = ({ hotel }) => {
             </div>
 
             <div className="p-4">
-                <NavLink to={`/cart/details/${id}`}><h2 className="text-lg font-semibold text-gray-800">
+                <NavLink to={`/tour/details/${id}`}><h2 className="text-lg font-semibold text-gray-800">
                     {location}
                 </h2></NavLink>
                 <p className="text-sm text-gray-600">
