@@ -4,6 +4,7 @@ import logoImage from '../../../assets/logoTravel.avif'
 import './Header.css'
 
 const Header = () => {
+
     return (
         <div className="navbar shadow-sm">
             <div className="navbar-start">

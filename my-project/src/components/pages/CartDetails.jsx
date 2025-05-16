@@ -49,13 +49,15 @@ const CartDetails = () => {
                         </span>
                     </div>
                     <div className='mt-3'>
-                        <figure className='w-full h-[400px]'>
-                            <img
-                                className='w-full h-[400px] object-cover rounded-lg'
-                                src={image}
-                                alt={title}
-                            />
-                        </figure>
+                        {image && (
+                            <figure className='w-full h-[400px]'>
+                                <img
+                                    className='w-full h-[400px] object-cover rounded-lg'
+                                    src={image}
+                                    alt={title}
+                                />
+                            </figure>
+                        )}
                     </div>
 
                     <OverView></OverView>
