@@ -1,8 +1,19 @@
 
 import { Link } from 'react-router-dom';
 import Header from './Mainlayout/Header/Header';
+import { useContext } from 'react';
+import { authContext } from './AuthProvider/AuthProvider';
 
 const Register = () => {
+
+    const {handleRegisterFrom}= useContext(authContext);
+
+    const handleForm=(e)=>{
+        e.preventDefault();
+        handleRegisterFrom();
+    }
+
+
     return (
         <div className='w-11/12 mx-auto space-y-2'>
 
@@ -18,7 +29,7 @@ const Register = () => {
             <div class="min-h-screen flex items-center justify-center bg-base-200">
                 <div class="w-full max-w-md p-8 space-y-2 bg-base-100 shadow-xl rounded-xl">
                     <h1 class="text-2xl font-bold text-center">Register Now</h1>
-                    <form class="space-y-2">
+                    <form onSubmit={handleForm} class="space-y-2">
                         <div class="form-control">
                             <label class="label">
                                 <span class="label-text"> Name</span>
