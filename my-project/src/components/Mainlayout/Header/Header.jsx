@@ -6,7 +6,7 @@ import './Header.css'
 const Header = () => {
 
     return (
-        <div className="navbar shadow-sm">
+        <div className="navbar shadow-sm ">
             <div className="navbar-start">
                 <div className="dropdown">
                     <div tabIndex={0} role="button" className="btn btn-ghost lg:hidden">
@@ -41,7 +41,7 @@ const Header = () => {
                 <Link to={'/'}><img className='w-10 h-10 hidden lg:block' src={logoImage} alt="" /></Link>
             </div>
             <div className="navbar-center hidden lg:flex">
-                <ul className="menu menu-horizontal px-1 text-white ">
+                <ul className="menu menu-horizontal px-1 text-black  text-xl">
                     <NavLink to={'/'}><li><a>Home</a></li></NavLink>
                     {/* <NavLink to={'/categories'}><li><a>Categories</a></li></NavLink> */}
                     <li>

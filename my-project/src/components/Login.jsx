@@ -1,20 +1,47 @@
-import React from 'react';
+
+import Header from './Mainlayout/Header/Header';
 
 const Login = () => {
     return (
-        <div className=" bg-purple-500 mt-20">
-                <div className="md:w-2/6 mx-auto card bg-base-100 w-full shrink-0 shadow-xl ">
-                    <div className="card-body ">
-                        <form className="fieldset justify-center">
-                            <label className="label">Email</label>
-                            <input type="email" className="input" placeholder="Email" />
-                            <label className="label">Password</label>
-                            <input type="password" className="input" placeholder="Password" />
-                            <div><a className="link link-hover">Forgot password?</a></div>
-                            <button className="btn btn-neutral mt-4 w-2/6 mx-auto">Login</button>
-                        </form>
-                    </div>
+        <div className='w-11/12 mx-auto space-y-2'>
+
+            <div
+                >
+
+                <Header></Header>
+         
+
+            </div>
+
+
+
+            <div class="min-h-screen flex items-center justify-center bg-base-200">
+                <div class="w-full max-w-md p-8 space-y-4 bg-base-100 shadow-xl rounded-xl">
+                    <h1 class="text-2xl font-bold text-center">Login Now</h1>
+                    <form class="space-y-4">
+                        <div class="form-control">
+                            <label class="label">
+                                <span class="label-text"> Email</span>
+                            </label><br />
+                            <input type="email" placeholder="email@example.com" class="input input-bordered" required />
+                        </div>
+                        <div class="form-control">
+                            <label class="label">
+                                <span class="label-text">Password</span>
+                            </label>
+                            <input type="password" placeholder="••••••••" class="input input-bordered" required />
+                            <label class="label">
+                                <a href="#" class="label-text-alt link link-hover">Forgot password?</a>
+                            </label>
+                        </div>
+                        <div class="form-control">
+                            <button type="submit" class="btn btn-primary">Login</button>
+                        </div>
+                    </form>
+                    <p class="text-sm text-center">Don’t have an account? <a href="#" class="link link-primary">Register</a></p>
                 </div>
+            </div>
+
         </div>
     );
 };
