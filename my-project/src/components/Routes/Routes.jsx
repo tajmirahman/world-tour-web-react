@@ -10,6 +10,7 @@ import News from "../pages/News";
 import Booking from "../pages/Booking";
 import TourGuid from "../pages/TourGuid";
 import Login from "../Login";
+import Register from "../Register";
 
 
 const routes = createBrowserRouter([
@@ -68,6 +69,10 @@ const routes = createBrowserRouter([
     {
         path:'/login',
         element:<Login></Login>
+    },
+    {
+        path:'/register',
+        element: <Register></Register>
     }
 
 ]);

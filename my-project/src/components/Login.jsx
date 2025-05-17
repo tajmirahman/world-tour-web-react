@@ -1,11 +1,12 @@
 
+import { Link } from 'react-router-dom';
 import Header from './Mainlayout/Header/Header';
 
 const Login = () => {
     return (
         <div className='w-11/12 mx-auto space-y-2'>
 
-            <div
+            <div className='bg-purple-400'
                 >
 
                 <Header></Header>
@@ -35,10 +36,10 @@ const Login = () => {
                             </label>
                         </div>
                         <div class="form-control">
-                            <button type="submit" class="btn btn-primary">Login</button>
+                            <button type="submit" class="btn bg-purple-400">Login</button>
                         </div>
                     </form>
-                    <p class="text-sm text-center">Don’t have an account? <a href="#" class="link link-primary">Register</a></p>
+                    <p class="text-sm text-center">Don’t have an account? <Link to={'/register'} class="link text-purple-400">register</Link></p>
                 </div>
             </div>
 
