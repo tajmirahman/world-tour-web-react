@@ -15,9 +15,8 @@ const Card = ({ hotel }) => {
                     alt="Kantua hotel"
                     className="w-full h-48 object-cover"
                 />
-                <span className="absolute top-2 right-2 bg-white text-purple-600 text-sm font-bold px-2 py-1 rounded-full">
-                    50%
-                </span>
+                {/* <span className="absolute top-2 right-2 bg-white text-purple-600 text-sm font-bold px-2 py-1 rounded-full"></span> */}
+
                 <div className="absolute bottom-2 left-2 text-white flex items-center gap-1">
                     <FaMapMarkerAlt className="text-white" />
                  <span className="text-sm">{title}</span>
@@ -34,7 +33,7 @@ const Card = ({ hotel }) => {
                     
                 </p>
                 <p className="text-xl font-bold text-purple-700 mt-2">
-                    $99.00 <span className="text-sm font-normal text-gray-600">{cost}</span>
+                    ${cost} <span className="text-sm font-normal text-gray-600">Price starts from</span>
                 </p>
             </div>
         </div>
