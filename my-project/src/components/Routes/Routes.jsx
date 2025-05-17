@@ -8,6 +8,7 @@ import CartDetails from "../pages/CartDetails";
 import Abouts from "../pages/Abouts";
 import News from "../pages/News";
 import Booking from "../pages/Booking";
+import TourGuid from "../pages/TourGuid";
 
 
 const routes = createBrowserRouter([
@@ -57,6 +58,11 @@ const routes = createBrowserRouter([
     {
         path:'/information',
         element:<Booking></Booking>
+    },
+    {
+        path:'/tour/guid',
+        element:<TourGuid></TourGuid>,
+        loader: () => fetch('/tourData.json').then(res => res.json())
     }
 
 ]);
