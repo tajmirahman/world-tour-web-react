@@ -15,12 +15,21 @@ const Header = () => {
                     <ul
                         tabIndex={0}
                         className="menu menu-sm dropdown-content bg-base-100 rounded-box z-1 mt-3 w-52 p-2 shadow">
-                        <NavLink to={'/'}><li ><a >Home</a></li></NavLink>
-                     <NavLink to={'/categories'}><li><a>Categories</a></li></NavLink>
+                       <NavLink to={'/'}><li><a>Home</a></li></NavLink>
+                     {/* <NavLink to={'/categories'}><li><a>Categories</a></li></NavLink> */}
+                     <li>
+                        <details>
+                            <summary>Categories</summary>
+                            <ul className="p-2 text-black">
+                                <NavLink to={'/tour/guid'}><li><a>Tour</a></li></NavLink>
+                                <NavLink to={'/tour/details'}><li><a>Tour Details</a></li></NavLink>
+                            </ul>
+                        </details>
+                    </li>
                     <li>
                         <details>
                             <summary>Pages</summary>
-                            <ul className="p-2">
+                            <ul className="p-2 text-black">
                                 <NavLink to={'/abouts'}><li><a>About</a></li></NavLink>
                                 <NavLink to={'/information'}><li><a>Booking Information</a></li></NavLink>
                             </ul>
@@ -33,9 +42,9 @@ const Header = () => {
             </div>
             <div className="navbar-center hidden lg:flex">
                 <ul className="menu menu-horizontal px-1 text-white ">
-                     <NavLink to={'/'}><li><a>Home</a></li></NavLink>
-                     {/* <NavLink to={'/categories'}><li><a>Categories</a></li></NavLink> */}
-                     <li>
+                    <NavLink to={'/'}><li><a>Home</a></li></NavLink>
+                    {/* <NavLink to={'/categories'}><li><a>Categories</a></li></NavLink> */}
+                    <li>
                         <details>
                             <summary>Categories</summary>
                             <ul className="p-2 text-black">
