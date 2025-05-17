@@ -9,6 +9,7 @@ import Abouts from "../pages/Abouts";
 import News from "../pages/News";
 import Booking from "../pages/Booking";
 import TourGuid from "../pages/TourGuid";
+import Login from "../Login";
 
 
 const routes = createBrowserRouter([
@@ -63,6 +64,10 @@ const routes = createBrowserRouter([
         path:'/tour/guid',
         element:<TourGuid></TourGuid>,
         loader: () => fetch('/tourData.json').then(res => res.json())
+    },
+    {
+        path:'/login',
+        element:<Login></Login>
     }
 
 ]);
