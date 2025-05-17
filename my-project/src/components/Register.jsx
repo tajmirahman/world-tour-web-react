@@ -6,11 +6,19 @@ import { authContext } from './AuthProvider/AuthProvider';
 
 const Register = () => {
 
-    const {handleRegisterFrom}= useContext(authContext);
+    const {createSignUp}= useContext(authContext);
 
     const handleForm=(e)=>{
         e.preventDefault();
-        handleRegisterFrom();
+        const name=e.target.name.value;
+        const email=e.target.email.value;
+        const password= e.target.password.value;
+        
+        createSignUp(email,password)
+        .then(res=>console.log(res))
+        .catch(err=>console.log(err))
+
+        // console.log(name,email,password)
     }
 
 

@@ -9,16 +9,14 @@ const AuthProvider = ({ children }) => {
 
     const auth=getAuth(app);
 
-    const handleRegisterFrom=(email,password)=>{
+    const createSignUp=(email,password)=>{
         return createUserWithEmailAndPassword(auth,email,password)
-        .then(res=>console.log(res))
-        .catch(err=>console.log(err))
     }
 
   ;
 
     const authInfo = {
-        handleRegisterFrom
+        createSignUp
     }
 
 
