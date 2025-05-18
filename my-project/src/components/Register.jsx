@@ -123,7 +123,7 @@ const Register = () => {
 
                     <div className='space-x-3'>
                         <button onClick={handleGoogle} className='btn bg-purple-400 text-white'>With google login</button>
-                        <button onSubmit={handleGithub} className='btn bg-purple-400 text-white'>With github login</button>
+                        <button onClick={handleGithub} className='btn bg-purple-400 text-white'>With github login</button>
                     </div>
 
                 </div>
