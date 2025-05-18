@@ -1,21 +1,26 @@
 
 import { Link } from 'react-router-dom';
 import Header from './Mainlayout/Header/Header';
-import { useContext } from 'react';
+import { useContext, useState } from 'react';
 import { authContext } from './AuthProvider/AuthProvider';
+import { FaEye, FaEyeSlash } from "react-icons/fa";
 
 const Login = () => {
 
-    const {signInUser}=useContext(authContext);
+    const { signInUser } = useContext(authContext);
+    const [error, setError] = useState('');
+    const [showPassword,setShowPassword]=useState(false);
 
-    const handleForm=(e)=>{
+
+    const handleForm = (e) => {
         e.preventDefault();
-        const email=e.target.email.value;
-        const password= e.target.password.value;
+        const email = e.target.email.value;
+        const password = e.target.password.value;
 
-        signInUser(email,password)
-        .then(res=>console.log(res))
-        .catch(err=>console.log(err))
+        signInUser(email, password)
+            .then((res) => console.log(res))
+            // .catch(err=>setError(err.code))
+            .catch(err => setError(err.message))
     }
 
 
@@ -38,14 +43,22 @@ const Login = () => {
                             </label><br />
                             <input type="email" name='email' placeholder="example@com" class="input input-bordered" required />
                         </div>
-                        <div class="form-control">
+                        <div class="form-control relative">
                             <label class="label">
                                 <span class="label-text">Password</span>
                             </label>
-                            <input type="password" name='password' placeholder="password" class="input input-bordered" required />
+                            <input type={showPassword ? 'text' : 'password'} name='password' placeholder="password" class="input input-bordered " required />
+                            <div className='absolute top-8 right-20 text-3xl' onClick={() => setShowPassword((prev) => !prev)}>
+                                {showPassword ? <FaEyeSlash /> : <FaEye />}
+                            </div>
                             <label class="label">
                                 <a href="#" class="label-text-alt link link-hover">Forgot password?</a>
                             </label>
+                        </div>
+                        <div>
+                            {
+                                error && <p className='text-red-600'>{error.split('/')[1].slice(0, 18)}</p>
+                            }
                         </div>
                         <div class="form-control">
                             <button type="submit" class="btn bg-purple-400">Login</button>

@@ -60,8 +60,8 @@ const Register = () => {
     const handleGithub = () => {
         userGithubLogin()
             .then(() => {
-               
-                    navigate('/');
+
+                navigate('/');
 
             })
             .catch(err => console.log(err))
@@ -126,7 +126,7 @@ const Register = () => {
                         </div>
                     </form>
                     <p class="text-sm text-center">if you have an account? <Link to="/login" className="link text-purple-400">login</Link></p>
-
+                    <hr />
                     <div className='space-x-3'>
                         <button onClick={handleGoogle} className='btn bg-purple-400 text-white'>With google login</button>
                         <button onClick={handleGithub} className='btn bg-purple-400 text-white'>With github login</button>
