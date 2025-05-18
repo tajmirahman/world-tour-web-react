@@ -6,7 +6,7 @@ import { authContext } from './AuthProvider/AuthProvider';
 
 const Register = () => {
 
-    const { createSignUp, updateUserProfile } = useContext(authContext);
+    const { createSignUp, updateUserProfile,userGoogleLogin } = useContext(authContext);
     const navigate = useNavigate();
     const [error, setError] = useState('');
 
@@ -44,11 +44,15 @@ const Register = () => {
                     })
                     .catch(err => console.log(err))
             })
-
-
             .catch(err => console.log(err))
 
         // console.log(name,email,password)
+    }
+
+    const handleGoogle=()=>{
+        userGoogleLogin()
+        .then(res=>console.log(res))
+        .catch(err=>console.log(err))
     }
 
 
@@ -91,7 +95,7 @@ const Register = () => {
                             <label class="label">
                                 <span class="label-text">Password</span>
                             </label>
-                            <input type="password" name='password' placeholder="password" class="input input-bordered" required />
+                            <input type="text" name='password' placeholder="password" class="input input-bordered" required />
                         </div>
 
                         <div class="form-control">
@@ -106,11 +110,18 @@ const Register = () => {
                             }
                         </div>
                         <div class="form-control">
-                            <button type="submit" className="btn bg-purple-400">Register</button>
+                            <button type="submit" className="btn bg-purple-400 text-white">Register</button>
                         </div>
                     </form>
                     <p class="text-sm text-center">if you have an account? <Link to="/login" className="link text-purple-400">login</Link></p>
+
+                    <div className='space-x-3'>
+                        <button onClick={handleGoogle} className='btn bg-purple-400 text-white'>With google login</button>
+                        <button className='btn bg-purple-400 text-white'>With github login</button>
+                    </div>
+
                 </div>
+
             </div>
 
         </div>
