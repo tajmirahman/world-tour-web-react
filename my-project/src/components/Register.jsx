@@ -6,7 +6,7 @@ import { authContext } from './AuthProvider/AuthProvider';
 
 const Register = () => {
 
-    const { createSignUp, updateUserProfile,userGoogleLogin } = useContext(authContext);
+    const { createSignUp, updateUserProfile,userGoogleLogin,userGithubLogin } = useContext(authContext);
     const navigate = useNavigate();
     const [error, setError] = useState('');
 
@@ -51,6 +51,12 @@ const Register = () => {
 
     const handleGoogle=()=>{
         userGoogleLogin()
+        .then(res=>console.log(res))
+        .catch(err=>console.log(err))
+    }
+
+    const handleGithub=()=>{
+        userGithubLogin()
         .then(res=>console.log(res))
         .catch(err=>console.log(err))
     }
@@ -117,7 +123,7 @@ const Register = () => {
 
                     <div className='space-x-3'>
                         <button onClick={handleGoogle} className='btn bg-purple-400 text-white'>With google login</button>
-                        <button className='btn bg-purple-400 text-white'>With github login</button>
+                        <button onSubmit={handleGithub} className='btn bg-purple-400 text-white'>With github login</button>
                     </div>
 
                 </div>
