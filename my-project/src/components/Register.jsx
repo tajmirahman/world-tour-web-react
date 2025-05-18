@@ -1,34 +1,52 @@
 
 import { Link, useNavigate } from 'react-router-dom';
 import Header from './Mainlayout/Header/Header';
-import { useContext } from 'react';
+import { useContext, useState } from 'react';
 import { authContext } from './AuthProvider/AuthProvider';
 
 const Register = () => {
 
-    const {createSignUp,updateUserProfile}= useContext(authContext);
-    const navigate=useNavigate();
+    const { createSignUp, updateUserProfile } = useContext(authContext);
+    const navigate = useNavigate();
+    const [error, setError] = useState('');
 
-    const handleForm=(e)=>{
+    const handleForm = (e) => {
         e.preventDefault();
-        const name=e.target.name.value;
-        const photo=e.target.photoUrl.value;
-        const email=e.target.email.value;
-        const password= e.target.password.value;
-        
-        createSignUp(email,password)
-        .then(res=>{
-            updateUserProfile({
-                displayName: name, photoURL: photo
+        const name = e.target.name.value;
+        const photo = e.target.photoUrl.value;
+        const email = e.target.email.value;
+        const password = e.target.password.value;
+        const conPassword = e.target.conPassword.value;
+
+        if (name.length < 4) {
+            setError('Name length at least 4 character!')
+            return
+        }
+        if (password != conPassword) {
+            setError('Password does not match!');
+            return
+        }
+
+        const regex = /^(?=.*[a-z])(?=.*[A-Z])(?=.*[!@#$%^&*(),.?":{}|<>])[A-Za-z\d!@#$%^&*(),.?":{}|<>]{6,}$/;
+
+        if (!regex.test(password)) {
+            setError('Password should be contained upercase,lowercase and speciall character and at least 6 character!')
+            return
+        }
+
+        createSignUp(email, password)
+            .then(() => {
+                updateUserProfile({
+                    displayName: name, photoURL: photo
+                })
+                    .then(() => {
+                        navigate('/')
+                    })
+                    .catch(err => console.log(err))
             })
-            .then(()=>{
-                navigate('/')
-            })
-            .catch(err=>console.log(err))
-        })
 
 
-        .catch(err=>console.log(err))
+            .catch(err => console.log(err))
 
         // console.log(name,email,password)
     }
@@ -40,7 +58,7 @@ const Register = () => {
             <div className='bg-purple-400'>
 
                 <Header></Header>
-         
+
 
             </div>
 
@@ -81,6 +99,11 @@ const Register = () => {
                                 <span class="label-text">Confirm Password</span>
                             </label>
                             <input type="password" name='conPassword' placeholder="password" class="input input-bordered" required />
+                        </div>
+                        <div>
+                            {
+                                error && <p className='text-red-400'>{error}</p>
+                            }
                         </div>
                         <div class="form-control">
                             <button type="submit" className="btn bg-purple-400">Register</button>
