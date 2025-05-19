@@ -15,6 +15,7 @@ const Login = () => {
     const { signInUser } = useContext(authContext);
     const [error, setError] = useState('');
     const [showPassword, setShowPassword] = useState(false);
+    const [success,setSuccess]=useState('')
 
 
     const handleForm = (e) => {
@@ -34,10 +35,10 @@ const Login = () => {
         const email= emailRef.current.value;
         sendPasswordResetEmail(auth,email)
         .then(()=>{
-            alert('Email send please check your email')
+            setSuccess('Email send please check your email')
         })
         .catch(error=>{
-            console.log('Error',error)
+            setError('Error',error)
         })
     }
 
@@ -68,7 +69,7 @@ const Login = () => {
                             <input type={showPassword ? 'text' : 'password'} name='password' placeholder="password" class="input input-bordered " required />
                             <button
                                 type="button"
-                                className="absolute top-8 right-20 text-xl text-gray-500"
+                                className="absolute top-8 md:right-20 right-8 text-xl text-gray-500"
                                 onClick={() => setShowPassword((prev) => !prev)}
                             >
                                 {showPassword ? <FaEyeSlash /> : <FaEye />}
@@ -80,6 +81,9 @@ const Login = () => {
                         <div>
                             {
                                 error && <p className='text-red-600'>{error.split('/')[1].slice(0, 18)}</p>
+                            }
+                            {
+                                success && <p className='text-green-600'>{success}</p>
                             }
                         </div>
                         <div class="form-control">

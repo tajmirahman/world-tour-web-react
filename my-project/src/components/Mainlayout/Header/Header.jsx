@@ -7,7 +7,7 @@ import { authContext } from '../../AuthProvider/AuthProvider';
 const Header = () => {
 
     const { userLogout, user } = useContext(authContext);
-    console.log(user?.displayName)
+    // console.log(user?.displayName)
     const handleLogout = () => {
         userLogout()
     }
@@ -72,9 +72,9 @@ const Header = () => {
                     <NavLink to={'/news'}><li><a>News</a></li></NavLink>
                     {
                         user && user?.email ?
-                        <NavLink to={'/profile'}><li><a>Profile</a></li></NavLink>
-                        :
-                        ''
+                            <NavLink to={'/profile'}><li><a>Profile</a></li></NavLink>
+                            :
+                            ''
                     }
                 </ul>
             </div>

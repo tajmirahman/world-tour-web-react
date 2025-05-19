@@ -42,7 +42,7 @@ const Register = () => {
                     .then(() => {
                         navigate('/')
                     })
-                    .catch(err => console.log(err))
+                    .catch(err => setError(err.code))
             })
             .catch(err => setError(err.code))
 
@@ -54,7 +54,7 @@ const Register = () => {
             .then(() => {
                 navigate('/')
             })
-            .catch(err => console.log(err))
+            .catch(err => setError(err.code))
     }
 
     const handleGithub = () => {
@@ -64,7 +64,7 @@ const Register = () => {
                 navigate('/');
 
             })
-            .catch(err => console.log(err))
+            .catch(err => setError(err.code))
     }
 
 

@@ -12,10 +12,8 @@ import WhyChooseUs from './CardDetails/WhyChooseUs';
 
 const CartDetails = () => {
     const data = useLoaderData();
-    console.log(data)
     const { id } = useParams();
-    console.log(id)
-
+    
     const [cartCategory, setCartCategory] = useState([]);
 
     useEffect(() => {

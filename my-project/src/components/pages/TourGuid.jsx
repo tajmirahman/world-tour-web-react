@@ -8,7 +8,7 @@ import { useState } from 'react';
 const TourGuid = () => {
 
     const data = useLoaderData();
-    console.log(data);
+
 
     const [tour, setTour]=useState(data)
 
