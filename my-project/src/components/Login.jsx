@@ -1,5 +1,5 @@
 
-import { Link } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
 import Header from './Mainlayout/Header/Header';
 import { useContext, useRef, useState } from 'react';
 import { authContext } from './AuthProvider/AuthProvider';
@@ -10,6 +10,7 @@ import app from '../Firebase/firebase.init';
 const Login = () => {
     const emailRef= useRef();
     const auth=getAuth(app);
+    const navigate=useNavigate();
 
     const { signInUser } = useContext(authContext);
     const [error, setError] = useState('');
@@ -22,7 +23,9 @@ const Login = () => {
         const password = e.target.password.value;
 
         signInUser(email, password)
-            .then((res) => console.log(res))
+            .then(() => {
+                navigate('/')
+            })
             // .catch(err=>setError(err.code))
             .catch(err => setError(err.message))
     }

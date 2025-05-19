@@ -23,7 +23,7 @@ const Header = () => {
                         tabIndex={0}
                         className="menu menu-sm dropdown-content bg-base-100 rounded-box z-1 mt-3 w-52 p-2 shadow">
                         <NavLink to={'/'}><li><a>Home</a></li></NavLink>
-                        {/* <NavLink to={'/categories'}><li><a>Categories</a></li></NavLink> */}
+
                         <li>
                             <details>
                                 <summary>Categories</summary>
@@ -48,9 +48,9 @@ const Header = () => {
                 <Link to={'/'}><img className='w-10 h-10 hidden lg:block' src={logoImage} alt="" /></Link>
             </div>
             <div className="navbar-center hidden lg:flex">
-                <ul className="menu menu-horizontal px-1 text-black  text-xl">
+                <ul className="menu menu-horizontal px-1 text-black  ">
                     <NavLink to={'/'}><li><a>Home</a></li></NavLink>
-                    {/* <NavLink to={'/categories'}><li><a>Categories</a></li></NavLink> */}
+
                     <li>
                         <details>
                             <summary>Categories</summary>
@@ -70,6 +70,12 @@ const Header = () => {
                         </details>
                     </li>
                     <NavLink to={'/news'}><li><a>News</a></li></NavLink>
+                    {
+                        user && user?.email ?
+                        <NavLink to={'/profile'}><li><a>Profile</a></li></NavLink>
+                        :
+                        ''
+                    }
                 </ul>
             </div>
             <div className="navbar-end">

@@ -11,6 +11,7 @@ import Booking from "../pages/Booking";
 import TourGuid from "../pages/TourGuid";
 import Login from "../Login";
 import Register from "../Register";
+import Profile from "../Profile";
 
 
 const routes = createBrowserRouter([
@@ -73,6 +74,10 @@ const routes = createBrowserRouter([
     {
         path:'/register',
         element: <Register></Register>
+    },
+    {
+        path:'/profile',
+        element:<Profile></Profile>
     }
 
 ]);
