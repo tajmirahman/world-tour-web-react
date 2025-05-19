@@ -1,11 +1,15 @@
 
 import { Link } from 'react-router-dom';
 import Header from './Mainlayout/Header/Header';
-import { useContext, useState } from 'react';
+import { useContext, useRef, useState } from 'react';
 import { authContext } from './AuthProvider/AuthProvider';
 import { FaEye, FaEyeSlash } from "react-icons/fa";
+import { getAuth, sendPasswordResetEmail } from 'firebase/auth';
+import app from '../Firebase/firebase.init';
 
 const Login = () => {
+    const emailRef= useRef();
+    const auth=getAuth(app);
 
     const { signInUser } = useContext(authContext);
     const [error, setError] = useState('');
@@ -21,6 +25,17 @@ const Login = () => {
             .then((res) => console.log(res))
             // .catch(err=>setError(err.code))
             .catch(err => setError(err.message))
+    }
+
+    const handleForgetPassword=()=>{
+        const email= emailRef.current.value;
+        sendPasswordResetEmail(auth,email)
+        .then(()=>{
+            alert('Email send please check your email')
+        })
+        .catch(error=>{
+            console.log('Error',error)
+        })
     }
 
 
@@ -41,7 +56,7 @@ const Login = () => {
                             <label class="label">
                                 <span class="label-text"> Email</span>
                             </label><br />
-                            <input type="email" name='email' placeholder="example@com" class="input input-bordered" required />
+                            <input type="email" name='email' placeholder="example@com" ref={emailRef} class="input input-bordered" required />
                         </div>
                         <div class="form-control relative">
                             <label class="label">
@@ -56,7 +71,7 @@ const Login = () => {
                                 {showPassword ? <FaEyeSlash /> : <FaEye />}
                             </button>
                             <label class="label">
-                                <a href="#" class="label-text-alt link link-hover">Forgot password?</a>
+                                <a onClick={handleForgetPassword} class="label-text-alt link link-hover">Forgot password?</a>
                             </label>
                         </div>
                         <div>

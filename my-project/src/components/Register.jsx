@@ -44,7 +44,7 @@ const Register = () => {
                     })
                     .catch(err => console.log(err))
             })
-            .catch(err => console.log(err))
+            .catch(err => setError(err.code))
 
         // console.log(name,email,password)
     }
