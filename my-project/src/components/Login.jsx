@@ -9,7 +9,7 @@ const Login = () => {
 
     const { signInUser } = useContext(authContext);
     const [error, setError] = useState('');
-    const [showPassword,setShowPassword]=useState(false);
+    const [showPassword, setShowPassword] = useState(false);
 
 
     const handleForm = (e) => {
@@ -48,9 +48,13 @@ const Login = () => {
                                 <span class="label-text">Password</span>
                             </label>
                             <input type={showPassword ? 'text' : 'password'} name='password' placeholder="password" class="input input-bordered " required />
-                            <div className='absolute top-8 right-20 text-3xl' onClick={() => setShowPassword((prev) => !prev)}>
+                            <button
+                                type="button"
+                                className="absolute top-8 right-20 text-xl text-gray-500"
+                                onClick={() => setShowPassword((prev) => !prev)}
+                            >
                                 {showPassword ? <FaEyeSlash /> : <FaEye />}
-                            </div>
+                            </button>
                             <label class="label">
                                 <a href="#" class="label-text-alt link link-hover">Forgot password?</a>
                             </label>
